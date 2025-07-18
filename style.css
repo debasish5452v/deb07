@@ -286,7 +286,7 @@ Nav link hover and active states with expanding underline */
 .home__social-icon {
     width: max-content;
     margin-bottom: var(--mb-1);
-    font-size: 1.4rem;
+    font-size: 2rem; /* Increased from 1.4rem to 2rem */
     color: var(--second-color);
 }
 

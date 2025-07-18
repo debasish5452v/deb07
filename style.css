@@ -336,6 +336,19 @@ Nav link hover and active states with expanding underline */
     border-radius: .4rem;
 }
 
+/* Increase the size of About and Projects section titles */
+#about .section-title,
+#work .section-title {
+    font-size: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+    #about .section-title,
+    #work .section-title {
+        font-size: 1.6rem;
+    }
+}
+
 /*===== SKILLS SECTION =====*/
 .skills-section {
     background-color: var(--card-bg);
@@ -359,15 +372,7 @@ Nav link hover and active states with expanding underline */
 }
 
 .skills-title::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    width: 45px;
-    height: 2px;
-    background-color: var(--first-color);
-    border-radius: 1px;
+    display: none;
 }
 
 .skills-category {

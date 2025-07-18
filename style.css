@@ -472,9 +472,122 @@ Nav link hover and active states with expanding underline */
 
 .about__subtitle,
 .about__text,
-.about__img,
 .skills-category {
     animation: appear linear;
     animation-timeline: view();
     animation-range: entry 0% cover 40%;
 }
+
+/* Project section */
+
+/* ===== PROJECT GRID ===== */
+.work__grid {
+  display: grid;
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+@media (min-width: 768px) {
+  .work__grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+/* ===== PROJECT CARD ===== */
+.project-card {
+  background: var(--white-color);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.project-card__img {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.project-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-card__img img {
+  transform: scale(1.08);
+}
+
+.project-card__body {
+  padding: 1.2rem 1.4rem 1.6rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--second-color);
+  margin-bottom: 0.5rem;
+}
+
+.project-card__desc {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.8rem;
+  flex: 1;
+}
+
+.project-card__tags {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.project-card__tags .skill-tag {
+  font-size: 0.75rem;
+  padding: 4px 10px;
+}
+
+.project-card__links {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--first-color);
+  transition: color 0.3s ease;
+}
+
+.btn-icon:hover {
+  color: var(--second-color);
+}
+
+.btn-icon--live {
+  color: #00b894;
+}
+
+.btn-icon--live:hover {
+  color: #00a884;
+}
+
+/* Scroll-reveal hook (already in your JS) */
+.sr .project-card {
+  visibility: hidden;
+}
+

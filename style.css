@@ -294,6 +294,13 @@ Nav link hover and active states with expanding underline */
     color: var(--first-color);
 }
 
+/* Increase social icon size on small screens */
+@media screen and (max-width: 576px) {
+  .home__social-icon {
+    font-size: 2.4rem;
+  }
+}
+
 /* Buttons */
 .button {
     display: inline-block;

@@ -371,8 +371,8 @@ Nav link hover and active states with expanding underline */
     margin-bottom: 20px;
 }
 
-.skills-title::after {
-    display: none;
+.skills-title {
+    color: var(--first-color);
 }
 
 .skills-category {
@@ -380,11 +380,11 @@ Nav link hover and active states with expanding underline */
     flex-wrap: wrap;
     justify-content: center;
     gap: 8px;
-    margin-bottom: 14px;
+    margin-bottom: 20px;
 }
 
 .skills-category:last-child {
-    margin-bottom: 0;
+    margin-bottom:0;
 }
 
 .skill-tag {
@@ -602,4 +602,3 @@ Nav link hover and active states with expanding underline */
 .sr .project-card {
   visibility: hidden;
 }
-

@@ -484,8 +484,8 @@ Nav link hover and active states with expanding underline */
     }
 }
 
-.about__subtitle,
-.about__text,
+/* .about__subtitle,
+.about__text, */
 .skills-category {
     animation: appear linear;
     animation-timeline: view();

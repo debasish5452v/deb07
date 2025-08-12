@@ -378,7 +378,8 @@ Nav link hover and active states with expanding underline */
 .skills-category {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content:flex-start;
+    padding-left: 25px;
     gap: 8px;
     margin-bottom: 20px;
 }
@@ -393,9 +394,10 @@ Nav link hover and active states with expanding underline */
     padding: 7px 14px;
     border-radius: 4px;
     font-size: 0.85em;
-    font-weight: 400;
+    font-weight: 550;
     white-space: nowrap;
     transition: background-color 0.3s ease, color 0.3s ease;
+
 }
 
 .skill-tag:hover {

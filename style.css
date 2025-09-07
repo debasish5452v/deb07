@@ -378,7 +378,7 @@ Nav link hover and active states with expanding underline */
 .skills-category {
     display: flex;
     flex-wrap: wrap;
-    justify-content:flex-start;
+    justify-content:center;
     padding-left: 25px;
     gap: 8px;
     margin-bottom: 20px;

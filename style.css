@@ -8,23 +8,59 @@ body {
     padding: 0;
     min-height: 100vh;
     width: 100%;
+}
 
-/* Ensure content visibility */
+/* Essential visibility rules */
 .section,
 .home,
 .home__data,
 .home__title,
 .home__social,
 .about__container,
-.skills-section,
-.project-card,
-.skill-tag,
 .nav__menu,
-.nav__list,
-.work__grid {
+.nav__list {
     visibility: visible !important;
     opacity: 1 !important;
     display: block;
+}
+
+/* Skills section specific visibility */
+.skills-section {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skills-category {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.skill-tag {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: inline-block !important;
+}
+
+/* Project cards specific visibility */
+.work__grid {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: grid !important;
+}
+
+.project-card {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: flex !important;
+    flex-direction: column;
 }
     overflow-x: hidden;
     overflow-y: visible;
@@ -2420,6 +2456,84 @@ img {
 
 .btn-icon--live:hover {
   color: #00a884;
+}
+
+/* Project Cards Enhanced Visibility */
+.work.section {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: block !important;
+}
+
+.work__grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 2rem !important;
+    padding: 1rem !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.project-card {
+    position: relative !important;
+    border-radius: 1rem !important;
+    overflow: hidden !important;
+    background-color: var(--first-color-lighter) !important;
+    padding: 1rem !important;
+    margin: 0 !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.project-card__img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 0.5rem !important;
+    overflow: hidden !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.project-card__img img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Skills Section Enhanced Visibility */
+.skills-section {
+    padding: 2rem !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: block !important;
+}
+
+.skills-category {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 1rem !important;
+    margin: 1rem 0 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.skill-tag {
+    display: inline-block !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 1rem !important;
+    background-color: var(--first-color-lighter) !important;
+    color: var(--first-color-dark) !important;
+    margin: 0.25rem !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
 }
 
 /* Ensure content visibility */

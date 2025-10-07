@@ -19,17 +19,40 @@ document.addEventListener('DOMContentLoaded', function() {
             navMenu.classList.toggle('show');
         });
     }
-    // Reveal all sections
-    sr.reveal('.section-title', {});
-    sr.reveal('.home__data', {});
-    sr.reveal('.home__title', {});
-    sr.reveal('.home__social-icon', { interval: 200 });
-    sr.reveal('.about__img', {});
-    sr.reveal('.about__subtitle', {});
-    sr.reveal('.about__text', {});
-    sr.reveal('.skills-section', {});
-    sr.reveal('.skill-tag', { interval: 100 });
-    sr.reveal('.project-card', { interval: 200 });
+    // Show content immediately
+    document.querySelectorAll('.project-card, .skill-tag').forEach(el => {
+        el.style.visibility = 'visible';
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+    });
+
+    // Initialize sections with ScrollReveal
+    sr.reveal('.section-title', { distance: '0px', opacity: 1 });
+    sr.reveal('.home__data', { distance: '0px', opacity: 1 });
+    sr.reveal('.home__title', { distance: '0px', opacity: 1 });
+    sr.reveal('.home__social-icon', { distance: '0px', opacity: 1 });
+    sr.reveal('.about__img', { distance: '0px', opacity: 1 });
+    sr.reveal('.about__subtitle', { distance: '0px', opacity: 1 });
+    sr.reveal('.about__text', { distance: '0px', opacity: 1 });
+    
+    // Initialize skills and projects without animations
+    sr.reveal('.skills-section', { 
+        distance: '0px', 
+        opacity: 1,
+        beforeReveal: function(el) {
+            el.style.visibility = 'visible';
+            el.style.opacity = '1';
+        }
+    });
+    
+    sr.reveal('.work__grid', {
+        distance: '0px',
+        opacity: 1,
+        beforeReveal: function(el) {
+            el.style.visibility = 'visible';
+            el.style.opacity = '1';
+        }
+    });
 
     sr.reveal('.button', {
         origin: 'bottom',

@@ -2458,6 +2458,11 @@ img {
   color: #00a884;
 }
 
+/* Hide any code snippets that might be visible */
+pre, code {
+    display: none !important;
+}
+
 /* Project Cards Enhanced Visibility */
 .work.section {
     visibility: visible !important;

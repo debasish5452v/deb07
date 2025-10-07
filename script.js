@@ -1,12 +1,14 @@
-/*==================== MAIN JS ====================*/
+// Wait for DOM to be ready
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize ScrollReveal first
+    // Initialize ScrollReveal with minimal animation
     const sr = ScrollReveal({
-        origin: 'top',
-        distance: '60px',
-        duration: 1000,
-        delay: 200,
-        reset: false
+        distance: '0',
+        duration: 600,
+        delay: 0,
+        reset: false,
+        opacity: 1,
+        scale: 1,
+        cleanup: true
     });
 
     // Navigation menu functionality

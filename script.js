@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('load', function() {
+    // Navigation menu functionality
     const navMenu = document.getElementById('nav-menu');
     const navToggle = document.getElementById('nav-toggle');
     const navLinks = document.querySelectorAll('.nav__link');
@@ -9,64 +10,105 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Initialize ScrollReveal only once
+    // Make sure ScrollReveal is loaded
+    if (typeof ScrollReveal === 'undefined') {
+        console.error('ScrollReveal not loaded');
+        return;
+    }
+
+    // Initialize ScrollReveal
     const sr = ScrollReveal({
-        origin: 'top',
-        distance: '30px',
-        duration: 800,
+        distance: '20px',
+        duration: 1000,
+        delay: 200,
         reset: false,
-        useDelay: 'once',
-        mobile: true,
+        easing: 'ease',
+        scale: 1,
         viewFactor: 0.2,
+        mobile: true,
         beforeReveal: function(el) {
-            el.style.transform = 'translate3d(0, 0, 0)';
-            el.style.opacity = '1';
+            el.style.visibility = 'visible';
         }
     });
-    // Reveal elements
-    sr.reveal('.home', {
-        distance: '0px',
-        opacity: 1
+    // Reveal home section
+    sr.reveal('.home__data', {
+        origin: 'top',
+        distance: '40px',
+        duration: 1000,
+        delay: 200
     });
-    
-    sr.reveal('.home__title', { 
-        delay: 100,
+
+    sr.reveal('.home__title', {
+        origin: 'left',
+        distance: '60px',
+        duration: 1000,
+        delay: 400
+    });
+
+    sr.reveal('.button', {
+        origin: 'bottom',
         distance: '20px',
-        origin: 'left'
+        duration: 800,
+        delay: 600
     });
-    
-    sr.reveal('.button', { 
-        delay: 200,
-        distance: '20px',
-        origin: 'bottom'
-    });
-    
-    sr.reveal('.home__social-icon', { 
-        interval: 100,
-        distance: '20px',
-        origin: 'right'
-    });
-    
-    sr.reveal('.about__img', { 
-        delay: 200,
+
+    sr.reveal('.home__social-icon', {
+        origin: 'right',
         distance: '30px',
-        origin: 'left'
+        duration: 800,
+        interval: 200
     });
-    
-    sr.reveal('.about__subtitle, .about__text', { 
-        delay: 300,
-        distance: '30px'
+
+    // Reveal skills section
+    sr.reveal('.skills-section', {
+        origin: 'bottom',
+        distance: '40px',
+        duration: 1000,
+        viewFactor: 0.2
     });
-    
-    sr.reveal('.skills-section', { 
-        delay: 200,
-        distance: '20px'
-    });
-    
-    sr.reveal('.project-card', { 
+
+    sr.reveal('.skill-tag', {
+        origin: 'bottom',
+        distance: '20px',
+        duration: 800,
         interval: 100,
+        delay: 400,
+        cleanup: true
+    });
+
+    // Reveal project cards
+    sr.reveal('.project-card', {
+        origin: 'bottom',
         distance: '30px',
-        origin: 'bottom'
+        duration: 800,
+        interval: 200,
+        scale: 0.98,
+        cleanup: true,
+        viewFactor: 0.2
+    });
+
+    // Reveal navigation items
+    sr.reveal('.nav__item', {
+        origin: 'top',
+        distance: '20px',
+        duration: 600,
+        interval: 100,
+        cleanup: true
+    });
+
+    // Make sure all sections are visible initially
+    document.querySelectorAll('.section').forEach(section => {
+        section.style.visibility = 'visible';
+    });
+
+    // Ensure project cards are visible
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.style.visibility = 'visible';
+    });
+
+    // Ensure skills are visible
+    document.querySelectorAll('.skill-tag').forEach(skill => {
+        skill.style.visibility = 'visible';
     });
 });
 

@@ -29,22 +29,27 @@ document.addEventListener('DOMContentLoaded', function() {
     const skillTags = document.querySelectorAll('.skill-tag');
     
     // Intersection Observer for skills section
+    const observerOptions = {
+        threshold: 0.3,
+        rootMargin: '0px'
+    };
+    
     const skillsObserver = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+                
+                // Animate skill tags with stagger effect
                 const tags = entry.target.querySelectorAll('.skill-tag');
                 tags.forEach((tag, index) => {
                     setTimeout(() => {
-                        tag.classList.add('animate-in');
-                    }, index * 100);
+                        tag.style.opacity = '1';
+                        tag.style.transform = 'translateY(0)';
+                    }, index * 50);
                 });
-                skillsObserver.unobserve(entry.target);
             }
         });
-    }, {
-        threshold: 0.2,
-        rootMargin: '0px'
-    });
+    }, observerOptions);
     
     if (skillsSection) {
         skillsObserver.observe(skillsSection);

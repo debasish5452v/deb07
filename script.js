@@ -1,4 +1,3 @@
-<script src="https://unpkg.com/scrollreveal"></script>
 const navMenu = document.getElementById('nav-menu');
 const navToggle = document.getElementById('nav-toggle');
 const navLinks = document.querySelectorAll('.nav__link');
@@ -8,25 +7,14 @@ if (navToggle && navMenu) {
         navMenu.classList.toggle('show');
     });
 }
-const sr = ScrollReveal({
-    origin: 'top',
-    distance: '30px',
-    duration: 300,
-    reset: false,
-    delay: 0,
-    easing: 'ease-out',
-    mobile: true,
-    useDelay: 'once',
-    viewFactor: 0.1
-});
-sr.reveal('.home', { delay: 0 });
-sr.reveal('.home__title', { delay: 50 });
-sr.reveal('.button', { delay: 100 });
-sr.reveal('.home__social-icon', { interval: 100 });
-sr.reveal('.about__img', { delay: 150 });
-sr.reveal('.about__subtitle, .about__text', { delay: 200 });
-sr.reveal('.skills-section', { delay: 250 });
-sr.reveal('.project-card', { interval: 100 });
+sr.reveal('.home', {});
+sr.reveal('.home__title', { delay: 100 });
+sr.reveal('.button', { delay: 200 });
+sr.reveal('.home__social-icon', { interval: 200 });
+sr.reveal('.about__img', { delay: 400 });
+sr.reveal('.about__subtitle, .about__text', { delay: 500 });
+sr.reveal('.skills-section', { delay: 600 });
+sr.reveal('.project-card', { interval: 200 });
 
 // Enhanced Skills Section Animation
 document.addEventListener('DOMContentLoaded', function() {

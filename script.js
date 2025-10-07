@@ -1,4 +1,14 @@
-window.addEventListener('load', function() {
+/*==================== MAIN JS ====================*/
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize ScrollReveal first
+    const sr = ScrollReveal({
+        origin: 'top',
+        distance: '60px',
+        duration: 1000,
+        delay: 200,
+        reset: false
+    });
+
     // Navigation menu functionality
     const navMenu = document.getElementById('nav-menu');
     const navToggle = document.getElementById('nav-toggle');
@@ -9,41 +19,17 @@ window.addEventListener('load', function() {
             navMenu.classList.toggle('show');
         });
     }
-
-    // Make sure ScrollReveal is loaded
-    if (typeof ScrollReveal === 'undefined') {
-        console.error('ScrollReveal not loaded');
-        return;
-    }
-
-    // Initialize ScrollReveal
-    const sr = ScrollReveal({
-        distance: '20px',
-        duration: 1000,
-        delay: 200,
-        reset: false,
-        easing: 'ease',
-        scale: 1,
-        viewFactor: 0.2,
-        mobile: true,
-        beforeReveal: function(el) {
-            el.style.visibility = 'visible';
-        }
-    });
-    // Reveal home section
-    sr.reveal('.home__data', {
-        origin: 'top',
-        distance: '40px',
-        duration: 1000,
-        delay: 200
-    });
-
-    sr.reveal('.home__title', {
-        origin: 'left',
-        distance: '60px',
-        duration: 1000,
-        delay: 400
-    });
+    // Reveal all sections
+    sr.reveal('.section-title', {});
+    sr.reveal('.home__data', {});
+    sr.reveal('.home__title', {});
+    sr.reveal('.home__social-icon', { interval: 200 });
+    sr.reveal('.about__img', {});
+    sr.reveal('.about__subtitle', {});
+    sr.reveal('.about__text', {});
+    sr.reveal('.skills-section', {});
+    sr.reveal('.skill-tag', { interval: 100 });
+    sr.reveal('.project-card', { interval: 200 });
 
     sr.reveal('.button', {
         origin: 'bottom',

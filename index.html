@@ -4,14 +4,14 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- Link to external CSS stylesheet -->
-        <link rel="stylesheet" href="style.css">
         <!-- Google Fonts: Poppins for typography -->
-        <script src="script.js"></script>  
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
         <!-- Boxicons for icons (e.g., menu, social media) -->
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <!-- Link to external CSS stylesheet -->
+        <link rel="stylesheet" href="style.css">
 
         <title>My Portfolio website</title>
     </head>
@@ -314,13 +314,33 @@
                 </section>
         </main>
 
-        <!-- ScrollReveal library for scroll animations -->
+        <!-- ScrollReveal library and custom scripts -->
         <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
-        
-        <!-- Main JavaScript file for custom scripts -->
-        <script src="script.js" defer></script>
-        
         <script>
+            // Ensure all sections are visible by default
+            document.addEventListener('DOMContentLoaded', function() {
+                const sections = [
+                    '.home__data',
+                    '.home__title',
+                    '.home__social',
+                    '.nav__menu',
+                    '.skills-section',
+                    '.about__container',
+                    '.work__grid',
+                    '.project-card',
+                    '.skill-tag'
+                ];
+                
+                sections.forEach(selector => {
+                    const elements = document.querySelectorAll(selector);
+                    elements.forEach(el => {
+                        el.style.visibility = 'visible';
+                        el.style.opacity = '1';
+                    });
+                });
+            });
+        </script>
+        <script src="script.js"></script>
                 /*===== MENU SHOW Y HIDDEN =====*/
                 const navMenu = document.getElementById('nav-menu');
                 const navToggle = document.getElementById('nav-toggle');

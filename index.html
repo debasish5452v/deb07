@@ -316,9 +316,11 @@
 
         <!-- ScrollReveal library for scroll animations -->
         <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
-
-                        <!-- Main JavaScript file for custom scripts -->
-                    <script>
+        
+        <!-- Main JavaScript file for custom scripts -->
+        <script src="script.js"></script>
+        
+        <script>
                 /*===== MENU SHOW Y HIDDEN =====*/
                 const navMenu = document.getElementById('nav-menu');
                 const navToggle = document.getElementById('nav-toggle');
@@ -332,45 +334,40 @@
 
                 /*===== SCROLL REVEAL ANIMATION =====*/
                 const sr = ScrollReveal({
-                    origin: 'bottom',
-                    distance: '30px',
-                    duration: 600,
-                    delay: 0,
-                    easing: 'ease-out',
-                    reset: false,
-                    mobile: true,
-                    useDelay: 'once',
-                    viewFactor: 0.1
+                    duration: 1000,
+                    distance: '60px',
+                    easing: 'cubic-bezier(0.5, 0, 0, 1)',
+                    reset: true
                 });
 
                 // Hero section animations
                 sr.reveal('.home__title', {
                     origin: 'left',
-                    distance: '50px',
-                    duration: 800,
+                    distance: '100px',
+                    duration: 1200,
                     delay: 100
                 });
 
                 sr.reveal('.button', {
                     origin: 'bottom',
-                    delay: 200,
-                    duration: 500
+                    delay: 600,
+                    duration: 800
                 });
 
                 // Social icons with stagger effect
                 sr.reveal('.home__social-icon', {
                     origin: 'right',
-                    interval: 100,
-                    distance: '20px',
-                    duration: 400
+                    interval: 200,
+                    distance: '40px',
+                    duration: 600
                 });
 
                 // About section with image focus
                 sr.reveal('.about__img', {
                     origin: 'left',
-                    distance: '30px',
-                    duration: 600,
-                    scale: 0.95
+                    distance: '100px',
+                    duration: 1000,
+                    scale: 0.85
                 });
 
                 sr.reveal('.about__text-content', {
@@ -382,17 +379,16 @@
                 // Skills section with grid animation
                 sr.reveal('.skill-tag', {
                     origin: 'bottom',
-                    interval: 50,
-                    distance: '10px',
-                    duration: 400,
-                    scale: 0.95,
-                    mobile: true
+                    interval: 100,
+                    distance: '20px',
+                    duration: 600,
+                    scale: 0.8
                 });
 
                 // Timeline animations with enhanced effects
                 const observerOptions = {
-                    threshold: 0.1,
-                    rootMargin: '0px'
+                    threshold: 0.2,
+                    rootMargin: '-50px'
                 };
 
                 const observer = new IntersectionObserver((entries) => {
@@ -421,12 +417,10 @@
                 // Project cards with stagger and scale
                 sr.reveal('.project-card', {
                     origin: 'bottom',
-                    interval: 150,
-                    distance: '20px',
-                    duration: 500,
-                    scale: 0.98,
-                    mobile: true,
-                    useDelay: 'once'
+                    interval: 300,
+                    distance: '60px',
+                    duration: 800,
+                    scale: 0.9
                 });
 
                 // Navigation menu animation
@@ -466,30 +460,12 @@
 
                 // Add hover effect detection for touch devices
                 document.querySelectorAll('.exp-card').forEach(card => {
-                    // Prevent ghost clicks
-                    let touchTimeout;
-                    
-                    card.addEventListener('touchstart', function(e) {
-                        e.preventDefault();
-                        clearTimeout(touchTimeout);
-                        document.querySelectorAll('.exp-card').forEach(c => {
-                            if (c !== this) c.classList.remove('hover');
-                        });
+                    card.addEventListener('touchstart', function() {
                         this.classList.add('hover');
                     });
-                    
-                    card.addEventListener('touchend', function(e) {
-                        e.preventDefault();
-                        const card = this;
-                        touchTimeout = setTimeout(() => {
-                            card.classList.remove('hover');
-                        }, 300);
+                    card.addEventListener('touchend', function() {
+                        this.classList.remove('hover');
                     });
-                    
-                    // Ensure cards are interactive
-                    card.style.cursor = 'pointer';
-                    card.style.webkitTapHighlightColor = 'transparent';
-                    card.style.touchAction = 'manipulation';
                 });
             });
         </script>

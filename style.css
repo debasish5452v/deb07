@@ -1,16 +1,17 @@
-/* Prevent horizontal scrolling and overflow */
-html, body {
-    max-width: 100vw;
+/* Ensure proper scrolling behavior */
+html {
+    height: 100%;
+    width: 100%;
     overflow-x: hidden;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    touch-action: manipulation;
 }
 
-/* Ensure touch events work properly on all devices */
-* {
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
+body {
+    min-height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: visible;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
 }
 
 /* Experience Section Styles */
@@ -26,10 +27,6 @@ html, body {
     opacity: 0;
     transform: translateY(50px);
     transition: all 0.8s cubic-bezier(0.21, 0.67, 0.12, 0.96);
-    touch-action: pan-y pinch-zoom;
-    cursor: pointer;
-    -webkit-user-select: none;
-    user-select: none;
 }
 
 .exp-article.show {

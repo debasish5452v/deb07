@@ -1,20 +1,74 @@
-const navMenu = document.getElementById('nav-menu');
-const navToggle = document.getElementById('nav-toggle');
-const navLinks = document.querySelectorAll('.nav__link');
+document.addEventListener('DOMContentLoaded', function() {
+    const navMenu = document.getElementById('nav-menu');
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.querySelectorAll('.nav__link');
 
-if (navToggle && navMenu) {
-    navToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('show');
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+    }
+
+    // Initialize ScrollReveal only once
+    const sr = ScrollReveal({
+        origin: 'top',
+        distance: '30px',
+        duration: 800,
+        reset: false,
+        useDelay: 'once',
+        mobile: true,
+        viewFactor: 0.2,
+        beforeReveal: function(el) {
+            el.style.transform = 'translate3d(0, 0, 0)';
+            el.style.opacity = '1';
+        }
     });
-}
-sr.reveal('.home', {});
-sr.reveal('.home__title', { delay: 100 });
-sr.reveal('.button', { delay: 200 });
-sr.reveal('.home__social-icon', { interval: 200 });
-sr.reveal('.about__img', { delay: 400 });
-sr.reveal('.about__subtitle, .about__text', { delay: 500 });
-sr.reveal('.skills-section', { delay: 600 });
-sr.reveal('.project-card', { interval: 200 });
+    // Reveal elements
+    sr.reveal('.home', {
+        distance: '0px',
+        opacity: 1
+    });
+    
+    sr.reveal('.home__title', { 
+        delay: 100,
+        distance: '20px',
+        origin: 'left'
+    });
+    
+    sr.reveal('.button', { 
+        delay: 200,
+        distance: '20px',
+        origin: 'bottom'
+    });
+    
+    sr.reveal('.home__social-icon', { 
+        interval: 100,
+        distance: '20px',
+        origin: 'right'
+    });
+    
+    sr.reveal('.about__img', { 
+        delay: 200,
+        distance: '30px',
+        origin: 'left'
+    });
+    
+    sr.reveal('.about__subtitle, .about__text', { 
+        delay: 300,
+        distance: '30px'
+    });
+    
+    sr.reveal('.skills-section', { 
+        delay: 200,
+        distance: '20px'
+    });
+    
+    sr.reveal('.project-card', { 
+        interval: 100,
+        distance: '30px',
+        origin: 'bottom'
+    });
+});
 
 // Enhanced Skills Section Animation
 document.addEventListener('DOMContentLoaded', function() {

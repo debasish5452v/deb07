@@ -634,7 +634,7 @@ html, body {
     display: flex;
     flex-wrap: wrap;
     gap: 1.2rem;
-    margin-top: 1rem;
+    margin-top: 0.2rem;
     position: relative;
 }
 
@@ -2395,3 +2395,12 @@ img {
 }
 }
 
+@media (max-width: 768px) {
+    .project-card__img {
+        height: 170px !important;
+    }
+    .project-card__body {
+        padding: 1.1rem 1rem !important;
+        min-height: 0 !important;
+    }
+}

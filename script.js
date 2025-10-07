@@ -1,127 +1,27 @@
-// Wait for DOM to be ready
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize ScrollReveal with minimal animation
-    const sr = ScrollReveal({
-        distance: '0',
-        duration: 600,
-        delay: 0,
-        reset: false,
-        opacity: 1,
-        scale: 1,
-        cleanup: true
-    });
+<script src="https://unpkg.com/scrollreveal"></script>
+const navMenu = document.getElementById('nav-menu');
+const navToggle = document.getElementById('nav-toggle');
+const navLinks = document.querySelectorAll('.nav__link');
 
-    // Navigation menu functionality
-    const navMenu = document.getElementById('nav-menu');
-    const navToggle = document.getElementById('nav-toggle');
-    const navLinks = document.querySelectorAll('.nav__link');
-
-    if (navToggle && navMenu) {
-        navToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('show');
-        });
-    }
-    // Show content immediately
-    document.querySelectorAll('.project-card, .skill-tag').forEach(el => {
-        el.style.visibility = 'visible';
-        el.style.opacity = '1';
-        el.style.transform = 'none';
+if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('show');
     });
-
-    // Initialize sections with ScrollReveal
-    sr.reveal('.section-title', { distance: '0px', opacity: 1 });
-    sr.reveal('.home__data', { distance: '0px', opacity: 1 });
-    sr.reveal('.home__title', { distance: '0px', opacity: 1 });
-    sr.reveal('.home__social-icon', { distance: '0px', opacity: 1 });
-    sr.reveal('.about__img', { distance: '0px', opacity: 1 });
-    sr.reveal('.about__subtitle', { distance: '0px', opacity: 1 });
-    sr.reveal('.about__text', { distance: '0px', opacity: 1 });
-    
-    // Initialize skills and projects without animations
-    sr.reveal('.skills-section', { 
-        distance: '0px', 
-        opacity: 1,
-        beforeReveal: function(el) {
-            el.style.visibility = 'visible';
-            el.style.opacity = '1';
-        }
-    });
-    
-    sr.reveal('.work__grid', {
-        distance: '0px',
-        opacity: 1,
-        beforeReveal: function(el) {
-            el.style.visibility = 'visible';
-            el.style.opacity = '1';
-        }
-    });
-
-    sr.reveal('.button', {
-        origin: 'bottom',
-        distance: '20px',
-        duration: 800,
-        delay: 600
-    });
-
-    sr.reveal('.home__social-icon', {
-        origin: 'right',
-        distance: '30px',
-        duration: 800,
-        interval: 200
-    });
-
-    // Reveal skills section
-    sr.reveal('.skills-section', {
-        origin: 'bottom',
-        distance: '40px',
-        duration: 1000,
-        viewFactor: 0.2
-    });
-
-    sr.reveal('.skill-tag', {
-        origin: 'bottom',
-        distance: '20px',
-        duration: 800,
-        interval: 100,
-        delay: 400,
-        cleanup: true
-    });
-
-    // Reveal project cards
-    sr.reveal('.project-card', {
-        origin: 'bottom',
-        distance: '30px',
-        duration: 800,
-        interval: 200,
-        scale: 0.98,
-        cleanup: true,
-        viewFactor: 0.2
-    });
-
-    // Reveal navigation items
-    sr.reveal('.nav__item', {
-        origin: 'top',
-        distance: '20px',
-        duration: 600,
-        interval: 100,
-        cleanup: true
-    });
-
-    // Make sure all sections are visible initially
-    document.querySelectorAll('.section').forEach(section => {
-        section.style.visibility = 'visible';
-    });
-
-    // Ensure project cards are visible
-    document.querySelectorAll('.project-card').forEach(card => {
-        card.style.visibility = 'visible';
-    });
-
-    // Ensure skills are visible
-    document.querySelectorAll('.skill-tag').forEach(skill => {
-        skill.style.visibility = 'visible';
-    });
+}
+const sr = ScrollReveal({
+    origin: 'top',
+    distance: '80px',
+    duration: 2000,
+    reset: true
 });
+sr.reveal('.home', {});
+sr.reveal('.home__title', { delay: 100 });
+sr.reveal('.button', { delay: 200 });
+sr.reveal('.home__social-icon', { interval: 200 });
+sr.reveal('.about__img', { delay: 400 });
+sr.reveal('.about__subtitle, .about__text', { delay: 500 });
+sr.reveal('.skills-section', { delay: 600 });
+sr.reveal('.project-card', { interval: 200 });
 
 // Enhanced Skills Section Animation
 document.addEventListener('DOMContentLoaded', function() {
@@ -129,27 +29,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const skillTags = document.querySelectorAll('.skill-tag');
     
     // Intersection Observer for skills section
-    const observerOptions = {
-        threshold: 0.3,
-        rootMargin: '0px'
-    };
-    
     const skillsObserver = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('animate-in');
-                
-                // Animate skill tags with stagger effect
                 const tags = entry.target.querySelectorAll('.skill-tag');
                 tags.forEach((tag, index) => {
                     setTimeout(() => {
-                        tag.style.opacity = '1';
-                        tag.style.transform = 'translateY(0)';
-                    }, index * 50);
+                        tag.classList.add('animate-in');
+                    }, index * 100);
                 });
+                skillsObserver.unobserve(entry.target);
             }
         });
-    }, observerOptions);
+    }, {
+        threshold: 0.2,
+        rootMargin: '0px'
+    });
     
     if (skillsSection) {
         skillsObserver.observe(skillsSection);

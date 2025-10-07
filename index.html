@@ -4,14 +4,14 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <!-- Link to external CSS stylesheet -->
+        <link rel="stylesheet" href="style.css">
         <!-- Google Fonts: Poppins for typography -->
+        <script src="script.js"></script>  
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
         <!-- Boxicons for icons (e.g., menu, social media) -->
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
-
-        <!-- Link to external CSS stylesheet -->
-        <link rel="stylesheet" href="style.css">
 
         <title>My Portfolio website</title>
     </head>
@@ -314,76 +314,11 @@
                 </section>
         </main>
 
-        <!-- ScrollReveal library and custom scripts -->
+        <!-- ScrollReveal library for scroll animations -->
         <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
-        <script>
-            // Hide all code that might be visible
-            document.addEventListener('DOMContentLoaded', function() {
-                // Remove any text nodes that contain code
-                document.body.childNodes.forEach(node => {
-                    if (node.nodeType === Node.TEXT_NODE && 
-                        node.textContent.includes('function') || 
-                        node.textContent.includes('const') ||
-                        node.textContent.includes('var')) {
-                        node.remove();
-                    }
-                });
 
-                // Make sure all sections are visible
-                const sections = [
-                    '.home__data',
-                    '.home__title',
-                    '.home__social',
-                    '.nav__menu',
-                    '.skills-section',
-                    '.about__container',
-                    '.work__grid',
-                    '.project-card',
-                    '.skill-tag'
-                ];
-                
-                sections.forEach(selector => {
-                    document.querySelectorAll(selector).forEach(el => {
-                        el.style.visibility = 'visible';
-                        el.style.opacity = '1';
-                        el.style.display = el.tagName.toLowerCase() === 'div' ? 'block' : 
-                                         el.classList.contains('skills-section') ? 'flex' : 
-                                         el.classList.contains('work__grid') ? 'grid' : 'block';
-                    });
-                });
-            });
-        </script>
-        <script src="script.js"></script>
-        <script>
-            // Ensure proper initialization after all scripts are loaded
-            window.addEventListener('load', function() {
-                // Force display of key sections
-                document.querySelector('.work.section').style.display = 'block';
-                document.querySelector('.skills-section').style.display = 'block';
-                
-                // Force grid display for project cards
-                const workGrid = document.querySelector('.work__grid');
-                if (workGrid) {
-                    workGrid.style.display = 'grid';
-                    workGrid.style.visibility = 'visible';
-                    workGrid.style.opacity = '1';
-                }
-                
-                // Ensure all project cards are visible
-                document.querySelectorAll('.project-card').forEach(card => {
-                    card.style.display = 'block';
-                    card.style.visibility = 'visible';
-                    card.style.opacity = '1';
-                });
-                
-                // Ensure all skill tags are visible
-                document.querySelectorAll('.skill-tag').forEach(tag => {
-                    tag.style.display = 'inline-block';
-                    tag.style.visibility = 'visible';
-                    tag.style.opacity = '1';
-                });
-            });
-        </script>
+                        <!-- Main JavaScript file for custom scripts -->
+                    <script>
                 /*===== MENU SHOW Y HIDDEN =====*/
                 const navMenu = document.getElementById('nav-menu');
                 const navToggle = document.getElementById('nav-toggle');

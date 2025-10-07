@@ -634,7 +634,7 @@ html, body {
     display: flex;
     flex-wrap: wrap;
     gap: 1.2rem;
-    margin-top: 0.2rem;
+    margin-top: 1rem;
     position: relative;
 }
 
@@ -2393,115 +2393,5 @@ img {
 .btn-icon--live:hover {
   color: #00a884;
 }
-
-/* Fixed Navigation and Social Icons */
-.nav {
-    height: var(--header-height);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1rem;
-    position: fixed;
-    width: 100%;
-    background: var(--body-color);
-    z-index: 100;
 }
 
-.nav__menu {
-    display: flex !important;
-    justify-content: flex-end;
-    align-items: center;
-    width: auto !important;
-    position: static !important;
-    padding: 0;
-    background: none;
-}
-
-.nav__list {
-    display: flex;
-    gap: 2rem;
-    padding-right: 2rem;
-    margin: 0;
-}
-
-.nav__item {
-    margin: 0;
-}
-
-.nav__link {
-    color: var(--text-color);
-    text-transform: uppercase;
-    font-size: var(--small-font-size);
-    font-weight: var(--font-semi);
-    transition: .3s;
-}
-
-/* Social Icons Fix */
-.home__social {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    position: fixed;
-    left: 2rem;
-    bottom: 2rem;
-}
-
-.home__social-icon {
-    font-size: 1.5rem;
-    color: var(--text-color);
-    transition: .3s;
-}
-
-.home__social-icon:hover {
-    color: var(--first-color);
-    transform: translateY(-5px);
-}
-
-/* Skills Section Enhancement */
-.skills-section {
-    padding: 4rem 2rem;
-    text-align: center;
-}
-
-.skills-category {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    margin: 2rem 0;
-}
-
-.skill-tag {
-    padding: 0.75rem 1.5rem;
-    background: var(--first-color-lighter);
-    color: var(--first-color-dark);
-    border-radius: 1rem;
-    font-size: var(--small-font-size);
-    font-weight: var(--font-semi);
-    transition: all 0.3s ease;
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.skill-tag.animate-in {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.skill-tag:hover {
-    background: var(--first-color);
-    color: #fff;
-    transform: translateY(-5px);
-}
-}
-
-@media (max-width: 768px) {
-    .project-card__img {
-        height: 170px !important;
-    }
-    .project-card__body {
-        padding: 1.1rem 1rem !important;
-        min-height: 0 !important;
-    }
-}

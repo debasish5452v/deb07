@@ -341,68 +341,57 @@
                 // Hero section animations
                 sr.reveal('.home__title', {
                     origin: 'left',
-                    distance: '100px',
-                    duration: 1200,
-                    delay: 100
+                    distance: '50px',
+                    duration: 800,
+                    delay: 50
                 });
 
                 sr.reveal('.button', {
                     origin: 'bottom',
-                    delay: 600,
-                    duration: 800
+                    delay: 300,
+                    duration: 600
                 });
 
                 // Social icons with stagger effect
                 sr.reveal('.home__social-icon', {
                     origin: 'right',
-                    interval: 200,
-                    distance: '40px',
-                    duration: 600
+                    interval: 150,
+                    distance: '30px',
+                    duration: 500
                 });
 
                 // About section with image focus
                 sr.reveal('.about__img', {
                     origin: 'left',
-                    distance: '100px',
-                    duration: 1000,
-                    scale: 0.85
+                    distance: '50px',
+                    duration: 700
                 });
 
                 sr.reveal('.about__text-content', {
                     origin: 'right',
-                    delay: 300,
-                    interval: 100
+                    delay: 200,
+                    interval: 80
                 });
 
                 // Skills section with grid animation
                 sr.reveal('.skill-tag', {
                     origin: 'bottom',
-                    interval: 100,
+                    interval: 80,
                     distance: '20px',
-                    duration: 600,
-                    scale: 0.8
+                    duration: 500
                 });
 
                 // Timeline animations with enhanced effects
                 const observerOptions = {
-                    threshold: 0.2,
-                    rootMargin: '-50px'
+                    threshold: 0.15,
+                    rootMargin: '-30px'
                 };
 
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             entry.target.classList.add('show');
-                            
-                            // Add staggered animation to work tags
-                            const tags = entry.target.querySelectorAll('.work-tag');
-                            tags.forEach((tag, index) => {
-                                setTimeout(() => {
-                                    tag.style.transitionDelay = `${index * 100}ms`;
-                                    tag.style.opacity = '1';
-                                    tag.style.transform = 'translateY(0)';
-                                }, 500 + (index * 100));
-                            });
+                            observer.unobserve(entry.target);
                         }
                     });
                 }, observerOptions);
@@ -415,19 +404,18 @@
                 // Project cards with stagger and scale
                 sr.reveal('.project-card', {
                     origin: 'bottom',
-                    interval: 300,
-                    distance: '60px',
-                    duration: 800,
-                    scale: 0.9
+                    interval: 200,
+                    distance: '40px',
+                    duration: 600
                 });
 
                 // Navigation menu animation
                 sr.reveal('.nav__item', {
                     origin: 'top',
-                    interval: 100,
-                    distance: '20px',
-                    duration: 600,
-                    delay: 100
+                    interval: 80,
+                    distance: '15px',
+                    duration: 500,
+                    delay: 50
                 });
             </script>
         <script>
@@ -436,19 +424,12 @@
                     entries.forEach((entry) => {
                         if (entry.isIntersecting) {
                             entry.target.classList.add('animate');
-                            
-                            // Animate skill tags with staggered delay
-                            const skills = entry.target.querySelectorAll('.exp-card__skills span');
-                            skills.forEach((skill, index) => {
-                                skill.style.setProperty('--index', index);
-                            });
-                            
                             experienceObserver.unobserve(entry.target);
                         }
                     });
                 }, {
-                    threshold: 0.3,
-                    rootMargin: '-50px'
+                    threshold: 0.2,
+                    rootMargin: '-30px'
                 });
 
                 // Observe all experience cards
@@ -473,45 +454,17 @@
                     entries.forEach((entry) => {
                         if (entry.isIntersecting) {
                             entry.target.classList.add('show');
-                            
-                            // Animate skill tags with staggered delay
-                            const skills = entry.target.querySelectorAll('.exp-article__skills span');
-                            skills.forEach((skill, index) => {
-                                skill.style.setProperty('--index', index);
-                            });
-                            
                             experienceObserver.unobserve(entry.target);
                         }
                     });
                 }, {
-                    threshold: 0.2,
-                    rootMargin: '-50px'
+                    threshold: 0.15,
+                    rootMargin: '-30px'
                 });
 
                 // Observe all experience articles
                 document.querySelectorAll('.exp-article').forEach((article) => {
                     experienceObserver.observe(article);
-                });
-
-                // Parallax effect on scroll
-                window.addEventListener('scroll', () => {
-                    document.querySelectorAll('.exp-article').forEach(article => {
-                        const speed = 0.2;
-                        const rect = article.getBoundingClientRect();
-                        const visible = rect.top < window.innerHeight && rect.bottom > 0;
-                        
-                        if (visible) {
-                            const yPos = -(rect.top * speed);
-                            article.style.transform = `translateY(${yPos}px)`;
-                            
-                            // Rotate company icon based on scroll
-                            const icon = article.querySelector('.exp-article__company-icon');
-                            if (icon) {
-                                const rotation = Math.min(Math.max((rect.top - window.innerHeight/2) * 0.05, -15), 15);
-                                icon.style.transform = `rotate(${rotation}deg)`;
-                            }
-                        }
-                    });
                 });
             });
         </script>

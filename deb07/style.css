@@ -13,7 +13,6 @@ html, body {
     max-width: 100vw;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
-    overscroll-behavior-y: none;
 }
 
 /* Experience Section Styles */
@@ -851,7 +850,6 @@ body {
     font-size: var(--normal-font-size);
     color: var(--second-color);
     background-color: var(--light-gray-bg);
-    overscroll-behavior: none;
 }
 
 h1, h2, p, ul {

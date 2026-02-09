@@ -2134,10 +2134,9 @@ img {
 }
 /* Footer Styles */
 .footer {
-    background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+    background-color: #f5f5f5;
     padding: 2rem 1rem;
     text-align: center;
-    border-top: 1px solid rgba(99, 102, 241, 0.1);
     margin-top: 3rem;
 }
 

@@ -1793,6 +1793,7 @@ img {
     font-weight: 600;
     color: #111827;
     flex: 1;
+    position: relative;
 }
 
 .cp-card__link {
@@ -1801,7 +1802,8 @@ img {
     transition: all 0.2s ease;
     position: absolute;
     right: 0;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .cp-card__link:hover {
@@ -2025,6 +2027,18 @@ img {
     }
 }
 
+/* Chatbot Input Container Base Styles */
+#chatbot-window > div:last-child {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+}
+
+#chatbot-send {
+    flex-shrink: 0 !important;
+    min-width: 44px !important;
+}
+
 /* Chatbot Responsive Styles */
 @media screen and (max-width: 768px) {
     #chatbot-widget {
@@ -2070,6 +2084,15 @@ img {
     #chatbot-send {
         padding: 8px 10px !important;
         font-size: 14px !important;
+        flex-shrink: 0 !important;
+        min-width: 40px !important;
+        width: fit-content !important;
+    }
+
+    /* Input container flex fix */
+    #chatbot-window > div:last-child {
+        display: flex !important;
+        flex-wrap: nowrap !important;
     }
 
     #chatbot-widget > button:first-child {
@@ -2124,6 +2147,16 @@ img {
     #chatbot-send {
         padding: 6px 8px !important;
         font-size: 12px !important;
+        flex-shrink: 0 !important;
+        min-width: 36px !important;
+        width: fit-content !important;
+    }
+
+    /* Input container flex fix */
+    #chatbot-window > div:last-child {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        gap: 6px !important;
     }
 
     #chatbot-widget > button:first-child {

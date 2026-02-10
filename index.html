@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Link to external CSS stylesheet -->
+        <link rel="stylesheet" href="style.css">
+        <!-- Google Fonts: Poppins for typography -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+        <!-- Boxicons for icons (e.g., menu, social media) -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+        
+        <!-- ScrollReveal for animations -->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <title>My Portfolio website</title>
+    </head>
+    <body>
+        <!-- Header Section -->
+        <header class="l-header">
+            <nav class="nav">
+                <div>
+                    <a href="#" class="nav__logo">
+                        <span class="nav__motto">Debasish</span>
+                     </a>
+                </div>
+
+                <!-- Navigation menu -->
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+                        <li class="nav__item"><a href="#work" class="nav__link">Projects</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="l-main">
+            <!-- Home Section -->
+            <section class="home bd-grid" id="home">
+                <div class="home__data">
+                    <h1 class="home__title">Hi,<br>I'm <span class="home__title-color">Debasish</span><br> Full Stack Web Developer</h1>
+                    <!-- Resume download button -->
+                    <a href="Resume.pdf" class="button" id="resumeDownload" download="Resume.pdf">Resume</a>
+                </div>
+
+                <!-- Social media icons -->
+                <div class="home__social">
+                    <a href="https://www.linkedin.com/in/debasish-mahata-081274245/" target="_blank" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://www.instagram.com/mahi07rutu?igsh=MXZxOXZ2dDJ1dmpxbQ==" target="_blank" class="home__social-icon"><i class='bx bxl-instagram'></i></a>
+                    <a href="https://github.com/debasish5452v" target="_blank" class="home__social-icon"><i class='bx bxl-github' ></i></a>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section class="about section" id="about">
+                <div class="about__container bd-grid">
+                    <div class="about__content">
+                        <h2 class="section-title">About</h2>
+                        <div class="about__main">
+                            <div class="about__img">
+                                <img src="profile.jpg" alt="Debasish Mahata Profile Picture">
+                            </div>
+                            <div class="about__text-content">
+                                <h2 class="about__name">Hey I'm Debasish</h2>
+                                <div class="about__details">
+                                    <div class="about__item">
+                                        <span class="about__bullet">■</span>
+                                        <span class="about__info">A passionate Full-Stack Web Developer. </span>
+                                    </div>
+                                    <div class="about__item">
+                                        <span class="about__bullet">■</span>
+                                        <span class="about__info">Crafting digital wonders and results-driven.</span>
+                                    </div>
+                                    <div class="about__item">
+                                        <span class="about__bullet">■</span>
+                                        <span class="about__info">Experience is centered around practical development and problem-solving.</span>
+                                    </div>
+                                    <div class="about__item">
+                                        <span class="about__bullet">■</span>
+                                        <span class="about__info">Expertise in C++, Typescript, React, Node.js, Express, MongoDB, and REST APIs.</span>
+                                    </div>
+                                    <div class="about__item">
+                                        <span class="about__bullet">■</span>
+                                        <span class="about__info">Strong foundation in DSA, OOP, DBMS, and Computer Networks.</span>
+                                    </div>
+                                    <div class="about__item">
+                                        <span class="about__bullet">■</span>
+                                        <span class="about__info">Open Source Contributor.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <div class="skills-section" id="skills">
+                <h2 class="skills-title">Skills</h2>
+
+                <div class="skills-category">
+                    <span class="skill-tag">C/C++</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">TypeScript</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">Linux</span>
+                </div>
+
+                <div class="skills-category">
+                    <span class="skill-tag">Express.js</span>
+                    <span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">React.js</span>
+                    <span class="skill-tag">Next.js</span>
+                    <span class="skill-tag">REST API</span>
+                    <span class="skill-tag">Git & GitHub</span>
+                    <span class="skill-tag">Tailwind CSS</span>
+                </div>
+
+                <div class="skills-category">
+                    <span class="skill-tag">OpenCV</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">Streamlit</span>
+                    <span class="skill-tag">Flask</span>
+                    <span class="skill-tag">FastApi</span>
+                    <span class="skill-tag">NumPy</span>
+                    <span class="skill-tag">Django</span>
+                    <span class="skill-tag">PyTorch</span>
+                </div>
+
+            </div>
+
+            <!-- Competitive Programming Profiles Section -->
+            <section class="cp-profiles section" id="cp-profiles">
+                <h2 class="section-title">Competitive Programming Profiles</h2>
+                
+                <div class="cp-container">
+                    <!-- Codeforces Card -->
+                    <div class="cp-card">
+                        <div class="cp-card__header">
+                            <div class="cp-card__logo codeforces-logo">
+                                <img src="images/logos/codeforces.png" alt="Codeforces">
+                            </div>
+                            <h3 class="cp-card__title">Codeforces</h3>
+                            <a href="https://codeforces.com/" target="_blank" class="cp-card__link"><i class='bx bx-link-external'></i></a>
+                        </div>
+                        <div class="cp-card__body">
+                            <div class="cp-card__username">@mahatad800</div>
+                            <div class="cp-card__stats">
+                                <div class="cp-stat">
+                                    <span class="cp-stat__label">Rating:</span>
+                                    <span class="cp-stat__value rating-value">1385</span>
+                                </div>
+                                <div class="cp-stat">
+                                    <span class="cp-stat__label">Rank:</span>
+                                    <span class="cp-stat__value rank-value">Expert</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- LeetCode Card -->
+                    <div class="cp-card">
+                        <div class="cp-card__header">
+                            <div class="cp-card__logo leetcode-logo">
+                                <img src="images/logos/leetcode.png" alt="LeetCode">
+                            </div>
+                            <h3 class="cp-card__title">LeetCode</h3>
+                            <a href="https://leetcode.com/" target="_blank" class="cp-card__link"><i class='bx bx-link-external'></i></a>
+                        </div>
+                        <div class="cp-card__body">
+                            <div class="cp-card__username">@Debasishmahata07</div>
+                            <div class="cp-card__stats">
+                                <div class="cp-stat">
+                                    <span class="cp-stat__label">Total Solved:</span>
+                                    <span class="cp-stat__value solved-value">350</span>
+                                </div>
+                                <div class="cp-stat">
+                                    <span class="cp-stat__label">Rating:</span>
+                                    <span class="cp-stat__value rating-value">1575</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CodeChef Card -->
+                    <div class="cp-card">
+                        <div class="cp-card__header">
+                            <div class="cp-card__logo codechef-logo">
+                                <img src="images/logos/codechef.png" alt="CodeChef">
+                            </div>
+                            <h3 class="cp-card__title">CodeChef</h3>
+                            <a href="https://www.codechef.com/" target="_blank" class="cp-card__link"><i class='bx bx-link-external'></i></a>
+                        </div>
+                        <div class="cp-card__body">
+                            <div class="cp-card__username">@debasish31</div>
+                            <div class="cp-card__stats">
+                                <div class="cp-stat">
+                                    <span class="cp-stat__label">Rating:</span>
+                                    <span class="cp-stat__value rating-value">1410</span>
+                                </div>
+                                <div class="cp-stat">
+                                    <span class="cp-stat__label">Stars:</span>
+                                    <span class="cp-stat__value stars">
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GeeksforGeeks Card -->
+                    <div class="cp-card">
+                        <div class="cp-card__header">
+                            <div class="cp-card__logo gfg-logo">
+                                <img src="images/logos/geeksforgeeks.png" alt="GeeksforGeeks">
+                            </div>
+                            <h3 class="cp-card__title">GeeksforGeeks</h3>
+                            <a href="https://www.geeksforgeeks.org/" target="_blank" class="cp-card__link"><i class='bx bx-link-external'></i></a>
+                        </div>
+                        <div class="cp-card__body">
+                            <div class="cp-card__username">@debasish07</div>
+                            <div class="cp-card__stats">
+                                <div class="cp-stat">
+                                    <span class="cp-stat__label">Score:</span>
+                                    <span class="cp-stat__value rating-value">300</span>
+                                </div>
+                                <div class="cp-stat">
+                                    <span class="cp-stat__label">Rank:</span>
+                                    <span class="cp-stat__value rank-value">Advanced</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+                <!-- ===== PROJECTS SECTION ===== -->
+                <section class="work section" id="work">
+                    <h2 class="section-title">Featured Projects</h2>
+                    <br>
+                    <div class="work__grid bd-grid">
+                        <!-- Project 1: E-Commerce Full Stack Platform -->
+                        <article class="project-card" data-category="fullstack web">
+                            <div class="project-card__img">
+                                <img src="images/logos/Screenshot 2025-10-05 163048.png" alt="AI-PCC Platform">
+                            </div>
+                            <div class="project-card__body">
+                                <h3 class="project-card__title">AI-Powered Content Creation Platform</h3>
+                                <p class="project-card__desc">
+                                    A modern, full-stack SaaS platform that generate high-quality articles, create AI images, process visuals, and get professional resume reviews all in one place.
+                                </p>
+                                <div class="project-card__tags">
+                                    <span class="skill-tag">React</span>
+                                    <span class="skill-tag">Node.js</span>
+                                    <span class="skill-tag">PostgreSQL</span>
+                                    <span class="skill-tag">Clerk</span>
+                                </div>
+                                <div class="project-card__links">
+                                    <a href="https://github.com/debasish5452v/scribex" target="_blank" class="btn-icon">
+                                        <i class='bx bxl-github'></i> Code
+                                    </a>
+                                    <a href="https://scribex-bice.vercel.app/" target="https://scribex-bice.vercel.app/" class="btn-icon btn-icon--live">
+                                        <i class='bx bx-link-external'></i> Live
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Project 2: Real-Time Finance Tracking & Analytics System -->
+                        <article class="project-card" data-category="web fullstack">
+                            <div class="project-card__img">
+                                <img src="images/logos/Dashboard.png" alt="Chat Application">
+                            </div>
+                            <div class="project-card__body">
+                                <h3 class="project-card__title">Real-Time Finance Tracking & Analytics System</h3>
+                                <p class="project-card__desc">
+                                    Full-stack finance tracker: JWT authentication, income/expense CRUD, real-time dashboard with interactive charts.
+                                </p>
+                                <div class="project-card__tags">
+                                    <span class="skill-tag">Next.js</span>
+                                    <span class="skill-tag">MongoDB</span>
+                                    <span class="skill-tag">Express</span>
+                                    <span class="skill-tag">Tailwind CSS</span>
+                                </div>
+                                <div class="project-card__links">
+                                    <a href="https://github.com/debasish5452v/Expense-Flow" target="_blank" class="btn-icon">
+                                        <i class='bx bxl-github'></i> Code
+                                    </a>
+                                    <a href="https://expense-flow-eta.vercel.app/" target="https://expense-flow-eta.vercel.app/" class="btn-icon btn-icon--live">
+                                        <i class='bx bx-link-external'></i> Live
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Project 3: Face Recognition Attendance System -->
+                        <article class="project-card" data-category="ai">
+                            <div class="project-card__img">
+                                <img src="images/logos/Screenshot 2025-09-23 192718.png" alt="Face Recognition">
+                            </div>
+                            <div class="project-card__body">
+                                <h3 class="project-card__title">Face Recognition Attendance</h3>
+                                <p class="project-card__desc">
+                                    Automated attendance system using facial recognition with web interface for attendance reports and admin management.
+                                </p>
+                                <div class="project-card__tags">
+                                    <span class="skill-tag">OpenCV</span>
+                                    <span class="skill-tag">Javascript</span>
+                                    <span class="skill-tag">Django</span>
+                                    <span class="skill-tag">Pytorch</span>
+                                </div>
+                                <div class="project-card__links">
+                                    <a href="https://github.com/debasish5452v/student-face-attandence-system" target="_blank" class="btn-icon">
+                                        <i class='bx bxl-github'></i> Code
+                                    </a>
+                                    <a href="#" target="_blank" class="btn-icon btn-icon--demo">
+                                        <i class='bx bx-play'></i> Demo
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Footer Section -->
+                <footer class="footer">
+                    <div class="footer__content">
+                        <p class="footer__credit">Design & Developed by <span class="footer__name">Debasish</span></p>
+                        <p class="footer__copyright">© 2026. All rights reserved.</p>
+                    </div>
+                </footer>
+        </main>
+
+        <!-- ScrollReveal library for scroll animations -->
+        <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+
+            <!-- AI Chatbot Widget -->
+            <div id="chatbot-widget" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; font-family: 'Poppins', sans-serif;">
+                <button id="chatbot-toggle" style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #6366f1 0%, #3b82f6 100%); border: none; color: white; font-size: 24px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4); transition: all 0.3s ease; pointer-events: auto; position: relative; overflow: visible;">
+                    <!-- Chat Icon (visible by default) -->
+                    <svg id="chat-icon" viewBox="0 0 24 24" style="width: 28px; height: 28px; position: relative; z-index: 2; transition: all 0.3s ease;">
+                        <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z" fill="white"/>
+                    </svg>
+                    <!-- Close Icon (hidden by default) -->
+                    <svg id="close-icon" viewBox="0 0 24 24" style="width: 28px; height: 28px; position: absolute; z-index: 2; display: none; transition: all 0.3s ease;">
+                        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="white"/>
+                    </svg>
+                </button>
+                <div id="chatbot-window" style="display: none; width: 360px; height: 520px; background: #ffffff; border-radius: 16px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12); position: absolute; bottom: 80px; right: 0; flex-direction: column; overflow: hidden; pointer-events: auto; border: 1px solid #e5e7eb;">
+                    <div style="background: #ffffff; color: #1f2937; padding: 16px 15px; display: flex; align-items: center; border-bottom: 1px solid #e5e7eb;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #6366f1 0%, #3b82f6 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px;">🤖</div>
+                            <div>
+                                <h3 style="margin: 0; font-size: 14px; font-weight: 600; color: #1f2937;">Debasish's Portfolio Assistant</h3>
+                                <p style="margin: 2px 0 0 0; font-size: 11px; color: #10b981; display: flex; align-items: center; gap: 4px; font-weight: 500;"><span style="width: 6px; height: 6px; background: #10b981; border-radius: 50%; display: inline-block;"></span>Online</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="chatbot-messages" style="flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 8px; background: #ffffff;"></div>
+                    <div style="padding: 12px 14px; border-top: 1px solid #e5e7eb; display: flex; gap: 8px; background: #ffffff;">
+                        <input type="text" id="chatbot-input" placeholder="Ask me about my work and experience..." style="flex: 1; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 13px; outline: none; pointer-events: auto; transition: border 0.2s; background: #ffffff; color: #374151;" />
+                        <button id="chatbot-send" style="background: #9ca3af; border: none; color: white; padding: 10px 16px; border-radius: 8px; cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; pointer-events: auto; transition: background 0.2s; font-weight: 500;"><i class='bx bx-send'></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <script src="script.js"></script>
+    </body>
+</html>

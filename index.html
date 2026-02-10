@@ -140,7 +140,6 @@
             <!-- Competitive Programming Profiles Section -->
             <section class="cp-profiles section" id="cp-profiles">
                 <h2 class="section-title">Competitive Programming Profiles</h2>
-                <p class="cp-subtitle">Active on multiple competitive programming platforms</p>
                 
                 <div class="cp-container">
                     <!-- Codeforces Card -->
@@ -348,47 +347,29 @@
             <!-- AI Chatbot Widget -->
             <div id="chatbot-widget" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; font-family: 'Poppins', sans-serif;">
                 <button id="chatbot-toggle" style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #6366f1 0%, #3b82f6 100%); border: none; color: white; font-size: 24px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4); transition: all 0.3s ease; pointer-events: auto; position: relative; overflow: visible;">
-                    <svg class="ai-icon" viewBox="0 0 100 100" style="width: 44px; height: 44px; position: relative; z-index: 2;">
-                        <!-- Robotic Head Logo -->
-                        <defs>
-                            <style>
-                                @keyframes blink { 0%, 100% { opacity: 1; } 45%, 55% { opacity: 0.3; } }
-                                .robot-eye { animation: blink 2.5s ease-in-out infinite; }
-                            </style>
-                        </defs>
-                        <!-- Robot Head Frame -->
-                        <rect x="28" y="25" width="44" height="50" rx="4" stroke="white" stroke-width="2.5" fill="none" stroke-linejoin="round"/>
-                        <!-- Left Eye -->
-                        <rect class="robot-eye" x="35" y="35" width="12" height="12" rx="2" fill="white" opacity="0.9"/>
-                        <!-- Right Eye -->
-                        <rect class="robot-eye" x="53" y="35" width="12" height="12" rx="2" fill="white" opacity="0.9"/>
-                        <!-- Antenna Left -->
-                        <line x1="38" y1="25" x2="38" y2="10" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                        <circle cx="38" cy="8" r="2" fill="white"/>
-                        <!-- Antenna Right -->
-                        <line x1="62" y1="25" x2="62" y2="10" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                        <circle cx="62" cy="8" r="2" fill="white"/>
-                        <!-- Mouth (smile) -->
-                        <path d="M 40 55 Q 50 60 60 55" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <!-- Chat Icon (visible by default) -->
+                    <svg id="chat-icon" viewBox="0 0 24 24" style="width: 28px; height: 28px; position: relative; z-index: 2; transition: all 0.3s ease;">
+                        <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z" fill="white"/>
                     </svg>
-                    <!-- Animated glow ring -->
-                    <div class="glow-ring" style="position: absolute; width: 100%; height: 100%; border: 2px solid rgba(99,102,241,0.3); border-radius: 50%; pointer-events: none;"></div>
+                    <!-- Close Icon (hidden by default) -->
+                    <svg id="close-icon" viewBox="0 0 24 24" style="width: 28px; height: 28px; position: absolute; z-index: 2; display: none; transition: all 0.3s ease;">
+                        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="white"/>
+                    </svg>
                 </button>
-                <div id="chatbot-window" style="display: none; width: 350px; height: 500px; background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%); border-radius: 16px; box-shadow: 0 10px 40px rgba(99, 102, 241, 0.15); position: absolute; bottom: 80px; right: 0; flex-direction: column; overflow: hidden; pointer-events: auto; border: 1px solid rgba(99, 102, 241, 0.1);">
-                    <div style="background: linear-gradient(135deg, #6366f1 0%, #3b82f6 100%); color: white; padding: 16px 15px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);">
+                <div id="chatbot-window" style="display: none; width: 360px; height: 520px; background: #ffffff; border-radius: 16px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12); position: absolute; bottom: 80px; right: 0; flex-direction: column; overflow: hidden; pointer-events: auto; border: 1px solid #e5e7eb;">
+                    <div style="background: #ffffff; color: #1f2937; padding: 16px 15px; display: flex; align-items: center; border-bottom: 1px solid #e5e7eb;">
                         <div style="display: flex; align-items: center; gap: 10px;">
-                            <div style="width: 40px; height: 40px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px;">🤖</div>
+                            <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #6366f1 0%, #3b82f6 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px;">🤖</div>
                             <div>
-                                <h3 style="margin: 0; font-size: 16px; font-weight: 700;">AI Assistant</h3>
-                                <p style="margin: 2px 0 0 0; font-size: 11px; opacity: 0.9;">🟢 Online</p>
+                                <h3 style="margin: 0; font-size: 14px; font-weight: 600; color: #1f2937;">Debasish's Portfolio Assistant</h3>
+                                <p style="margin: 2px 0 0 0; font-size: 11px; color: #10b981; display: flex; align-items: center; gap: 4px; font-weight: 500;"><span style="width: 6px; height: 6px; background: #10b981; border-radius: 50%; display: inline-block;"></span>Online</p>
                             </div>
                         </div>
-                        <button id="chatbot-close" style="background: none; border: none; color: white; font-size: 24px; cursor: pointer; padding: 0; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; pointer-events: auto; opacity: 0.8; transition: opacity 0.2s;"><i class='bx bx-x'></i></button>
                     </div>
-                    <div id="chatbot-messages" style="flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; background: linear-gradient(135deg, rgba(99,102,241,0.03) 0%, rgba(59,130,246,0.02) 100%);"></div>
-                    <div style="padding: 14px 12px; border-top: 1px solid rgba(99,102,241,0.1); display: flex; gap: 8px; background: #ffffff;">
-                        <input type="text" id="chatbot-input" placeholder="Ask me anything..." style="flex: 1; padding: 11px 14px; border: 1px solid #e5e7eb; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 14px; outline: none; pointer-events: auto; transition: border 0.2s; background: #f9fafb;" />
-                        <button id="chatbot-send" style="background: linear-gradient(135deg, #6366f1 0%, #3b82f6 100%); border: none; color: white; padding: 10px 14px; border-radius: 8px; cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; pointer-events: auto; transition: transform 0.2s; font-weight: 600;"><i class='bx bx-send'></i></button>
+                    <div id="chatbot-messages" style="flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 8px; background: #ffffff;"></div>
+                    <div style="padding: 12px 14px; border-top: 1px solid #e5e7eb; display: flex; gap: 8px; background: #ffffff;">
+                        <input type="text" id="chatbot-input" placeholder="Ask me about my work and experience..." style="flex: 1; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 13px; outline: none; pointer-events: auto; transition: border 0.2s; background: #ffffff; color: #374151;" />
+                        <button id="chatbot-send" style="background: #9ca3af; border: none; color: white; padding: 10px 16px; border-radius: 8px; cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; pointer-events: auto; transition: background 0.2s; font-weight: 500;"><i class='bx bx-send'></i></button>
                     </div>
                 </div>
             </div>

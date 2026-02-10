@@ -499,10 +499,16 @@ img {
 .section-title {
     position: relative;
     font-size: var(--h2-font-size);
-    color: #2c5aa0;
+    color: #000;
     margin-top: var(--mb-2);
     margin-bottom: var(--mb-3);
     text-align: center;
+}
+
+.work .section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--first-color);
 }
 
 /* Mobile responsive for enhanced project section */
@@ -512,7 +518,8 @@ img {
     }
     
     .work .section-title {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
+        font-weight: 600;
         margin-bottom: 0.3rem;
     }
     
@@ -606,7 +613,8 @@ img {
 /* Very small screens */
 @media (max-width: 320px) {
     .work .section-title {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
+        font-weight: 600;
     }
     
     .project-card__img {
@@ -894,10 +902,10 @@ img {
 
 .about .section-title {
     text-align: center;
-    font-size: 2rem;
-    color: #4a90e2;
+    font-size: 1.5rem;
+    color: var(--first-color);
     margin-bottom: 4rem;
-    font-weight: 700;
+    font-weight: 600;
     position: relative;
 }
 
@@ -943,7 +951,7 @@ img {
 }
 
 .about__name {
-    font-size: 2rem;
+    font-size: 1.75rem;
     color: #2c3e50;
     margin-bottom: 1.5rem;
     font-weight: 600;
@@ -1060,7 +1068,7 @@ img {
         margin-left: 3.3rem;
     }
     .about__name {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         color: #2c3e50;
         margin-bottom: 1.2rem;
         margin-right: 1.1rem;
@@ -1100,9 +1108,6 @@ img {
         text-align: left;
         width: 100%;
     }
-    .about .section-title {
-        font-size: 2.2rem;
-    }
 }
 
 @media screen and (max-width: 480px) {
@@ -1137,7 +1142,7 @@ img {
     }
     
     .about__name {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         margin-bottom: 1rem;
         text-align: center;
     }
@@ -1155,11 +1160,6 @@ img {
     .about__info {
         font-size: 0.85rem;
         line-height: 1.4;
-    }
-    
-    .about .section-title {
-        font-size: 1.5rem;
-        margin-bottom: 2rem;
     }
     
     .about__details {
@@ -1307,9 +1307,9 @@ img {
 }
 
 .skills-title {
-    font-size: 1.6em;
+    font-size: 1.5rem;
     font-weight: 600;
-    color: var(--text-color-general);
+    color: var(--first-color);
     position: relative;
     padding-bottom: 7px;
     margin-bottom: 20px;
@@ -1364,7 +1364,7 @@ img {
     }
 
     .skills-title {
-        font-size: 1.8em;
+        font-size: 1.5rem;
         padding-bottom: 8px;
         margin-bottom: 25px;
     }
@@ -1397,12 +1397,13 @@ img {
     
     .about .section-title,
     .experience .section-title {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
+        font-weight: 600;
         margin-bottom: 1.5rem;
     }
     
     .about__name {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
     
     .about__info {
@@ -1702,17 +1703,17 @@ img {
 
 /*===== COMPETITIVE PROGRAMMING PROFILES SECTION =====*/
 .cp-profiles.section {
-    padding: 0.5rem 0 2rem 0;
+    padding: 3rem 0 6rem 0;
     background: #f9fafb;
     position: relative;
 }
 
 .cp-profiles .section-title {
     text-align: center;
-    font-size: 1.65rem;
-    color: #111827;
-    margin-bottom: 0.25rem;
-    font-weight: 700;
+    font-size: 1.5rem;
+    color: #262728;
+    margin-bottom: 4.5rem;
+    font-weight: 600;
 }
 
 .cp-subtitle {
@@ -1789,7 +1790,7 @@ img {
 }
 
 .cp-card__title {
-    font-size: 1.05rem;
+    font-size: 1rem;
     font-weight: 600;
     color: #111827;
     flex: 1;
@@ -1797,7 +1798,7 @@ img {
 }
 
 .cp-card__link {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     color: #9ca3af;
     transition: all 0.2s ease;
     position: absolute;
@@ -1815,7 +1816,7 @@ img {
 }
 
 .cp-card__username {
-    font-size: 0.8125rem;
+    font-size: 0.875rem;
     color: #6b7280;
     margin-bottom: 0.7rem;
     font-weight: 400;
@@ -1834,14 +1835,14 @@ img {
 }
 
 .cp-stat__label {
-    font-size: 0.8125rem;
+    font-size: 0.875rem;
     color: #6b7280;
     font-weight: 400;
 }
 
 .cp-stat__value {
     font-size: 0.875rem;
-    font-weight: 550;
+    font-weight: 600;
     color: #111827;
 }
 
@@ -1851,7 +1852,7 @@ img {
 
 .rank-value {
     color: #ec4899;
-    font-weight: 550;
+    font-weight: 600;
 }
 
 .solved-value {
@@ -1891,12 +1892,12 @@ img {
 
 @media screen and (max-width: 768px) {
     .cp-profiles.section {
-        padding: 0.5rem 0 1.25rem 0;
+        padding: 2rem 0 3rem 0;
     }
 
     .cp-profiles .section-title {
-        font-size: 1.125rem;
-        margin-bottom: 0.2rem;
+        font-size: 1.3rem;
+        margin-bottom: 3.5rem;
         font-weight: 600;
     }
 
@@ -1929,16 +1930,16 @@ img {
     }
 
     .cp-card__title {
-        font-size: 0.9375rem;
+        font-size: 1.05rem;
         font-weight: 600;
     }
 
     .cp-card__link {
-        font-size: 0.8125rem;
+        font-size: 1rem;
     }
 
     .cp-card__username {
-        font-size: 0.75rem;
+        font-size: 0.875rem;
         margin-bottom: 0.65rem;
     }
 
@@ -1947,12 +1948,12 @@ img {
     }
 
     .cp-stat__label {
-        font-size: 0.75rem;
+        font-size: 0.875rem;
     }
 
     .cp-stat__value {
         font-size: 0.875rem;
-        font-weight: 700;
+        font-weight: 600;
     }
 
     .stars i {
@@ -1962,12 +1963,12 @@ img {
 
 @media screen and (max-width: 480px) {
     .cp-profiles.section {
-        padding: 0.3rem 0 1rem 0;
+        padding: 2rem 0 3rem 0;
     }
 
     .cp-profiles .section-title {
-        font-size: 1rem;
-        margin-bottom: 0.15rem;
+        font-size: 1.1rem;
+        margin-bottom: 3.5rem;
         font-weight: 600;
     }
 
@@ -2000,16 +2001,16 @@ img {
     }
 
     .cp-card__title {
-        font-size: 0.875rem;
+        font-size: 1rem;
         font-weight: 600;
     }
 
     .cp-card__link {
-        font-size: 0.75rem;
+        font-size: 0.95rem;
     }
 
     .cp-card__username {
-        font-size: 0.6875rem;
+        font-size: 0.8125rem;
         margin-bottom: 0.6rem;
     }
 
@@ -2018,12 +2019,12 @@ img {
     }
 
     .cp-stat__label {
-        font-size: 0.6875rem;
+        font-size: 0.8125rem;
     }
 
     .cp-stat__value {
         font-size: 0.8125rem;
-        font-weight: 700;
+        font-weight: 600;
     }
 
     .stars i {
@@ -2061,7 +2062,11 @@ img {
     }
 
     #chatbot-window > div:first-child h3 {
-        font-size: 14px !important;
+        font-size: 12px !important;
+    }
+
+    #chatbot-window > div:first-child p {
+        font-size: 10px !important;
     }
 
     #chatbot-window > div:first-child button {
@@ -2076,13 +2081,34 @@ img {
     }
 
     #chatbot-messages > div {
-        font-size: 13px !important;
+        font-size: 11px !important;
+        padding: 8px 10px !important;
+    }
+
+    #chatbot-messages div[style*="font-size"] {
+        font-size: 11px !important;
+    }
+
+    #chatbot-messages button {
+        font-size: 11px !important;
         padding: 8px 10px !important;
     }
 
     #chatbot-input {
-        font-size: 13px !important;
+        font-size: 11px !important;
         padding: 8px 10px !important;
+    }
+
+    #chatbot-messages div[style*="width: 32px"] {
+        width: 26px !important;
+        height: 26px !important;
+        font-size: 13px !important;
+    }
+
+    #chatbot-messages div[style*="width: 40px"] {
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 15px !important;
     }
 
     #chatbot-send {
@@ -2123,7 +2149,11 @@ img {
     }
 
     #chatbot-window > div:first-child h3 {
-        font-size: 13px !important;
+        font-size: 11px !important;
+    }
+
+    #chatbot-window > div:first-child p {
+        font-size: 9px !important;
     }
 
     #chatbot-window > div:first-child button {
@@ -2138,14 +2168,35 @@ img {
     }
 
     #chatbot-messages > div {
-        font-size: 12px !important;
+        font-size: 10px !important;
         padding: 6px 8px !important;
         max-width: 90% !important;
     }
 
+    #chatbot-messages div[style*="font-size"] {
+        font-size: 10px !important;
+    }
+
+    #chatbot-messages button {
+        font-size: 10px !important;
+        padding: 7px 9px !important;
+    }
+
     #chatbot-input {
-        font-size: 12px !important;
+        font-size: 10px !important;
         padding: 6px 8px !important;
+    }
+
+    #chatbot-messages div[style*="width: 32px"] {
+        width: 24px !important;
+        height: 24px !important;
+        font-size: 12px !important;
+    }
+
+    #chatbot-messages div[style*="width: 40px"] {
+        width: 28px !important;
+        height: 28px !important;
+        font-size: 14px !important;
     }
 
     #chatbot-send {

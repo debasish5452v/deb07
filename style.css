@@ -779,6 +779,10 @@ img {
         padding: 0 1rem;
         padding-right: 0;
     }
+    .nav__logo {
+        font-size: 1.6rem;
+        font-weight: 600;
+    }
     .nav__menu {
         display: flex;
         justify-content: flex-end;
@@ -799,7 +803,7 @@ img {
     }
     .nav__link {
         color: #ffffff;
-        font-size: 0.95rem;
+        font-size: 1rem;
         font-weight: 600;
         padding: 0.5rem 0;
         white-space: nowrap;
@@ -1545,39 +1549,43 @@ img.skill-logo {
 /* Mobile devices (390px to 600px) - Reduce sizes but keep structure */
 @media (max-width: 600px) and (min-width: 390px) {
     .skills-category {
-        gap: 6px;
-        margin-bottom: 15px;
+        gap: 10px;
+        margin-bottom: 20px;
     }
 
     .skill-tag {
-        padding: 6px 12px;
-        font-size: 0.7em;
-        border-radius: 3px;
+        padding: 12px 20px;
+        font-size: 1.3em;
+        border-radius: 4px;
     }
 
     .skill-logo {
-        font-size: 1.15em;
+        font-size: 1.8em;
     }
 
     img.skill-logo {
-        width: 1.15em;
-        height: 1.15em;
+        width: 1.8em;
+        height: 1.8em;
     }
 
     .skills-section {
         max-width: 380px;
-        padding: 20px 15px;
+        padding: 20px 8px;
         margin: 2rem auto;
+        width: 90%;
     }
 
     .skills-title {
-        font-size: 1.3rem;
-        margin-bottom: 25px;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 28px;
+        color: var(--first-color);
     }
 
     .skills-title::after {
-        width: 60px;
-        height: 2px;
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(90deg, var(--first-color), transparent);
     }
 }
 
@@ -2910,5 +2918,51 @@ img.skill-logo {
     .work .section-title {
         font-size: 1.3rem !important;
         margin-bottom: 0.5rem !important;
+    }
+}
+
+/* ===== MOBILE: Skill tags size fix ===== */
+@media screen and (max-width: 767px) {
+    .skills-section .skill-tag {
+        padding: 8px 13px !important;
+        font-size: 0.82em !important;
+        gap: 6px !important;
+        border-radius: 4px !important;
+    }
+
+    .skills-section .skill-logo {
+        font-size: 1.35em !important;
+    }
+
+    .skills-section img.skill-logo {
+        width: 1.35em !important;
+        height: 1.35em !important;
+    }
+
+    .skills-section .skills-category {
+        gap: 7px !important;
+        margin-bottom: 12px !important;
+    }
+    
+    /* Project card tags on mobile - single line fit */
+    .project-card__tags {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 4px !important;
+        margin-bottom: 0.4rem !important;
+    }
+    
+    .project-card__tags .skill-tag {
+        font-size: 0.68rem !important;
+        padding: 3px 7px !important;
+        gap: 3px !important;
+        white-space: nowrap !important;
+    }
+    
+    .project-card__tags .skill-logo,
+    .project-card__tags img.skill-logo {
+        font-size: 1em !important;
+        width: 1em !important;
+        height: 1em !important;
     }
 }

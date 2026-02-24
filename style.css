@@ -446,7 +446,7 @@ html, body {
 /* Media Query for larger screen font sizes */
 @media screen and (min-width: 968px) {
     :root {
-        --big-font-size: 3rem;
+        --big-font-size: 2.4rem;
         --h2-font-size: 1.8rem;
         --normal-font-size: .95rem;
         --smaller-font-size: .8rem;
@@ -698,29 +698,9 @@ img {
     z-index: var(--z-fixed);
     background-color: #2c3e50;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
     visibility: visible !important;
     opacity: 1 !important;
-}
-
-/*===== NAV =====*/
-
-/* Ensure nav items stay visible after ScrollReveal animations */
-.nav__item,
-.nav__menu,
-.nav__list {
-    visibility: visible !important;
-    opacity: 1 !important;
-}
-
-@media screen and (min-width: 992px) {
-  .nav__motto {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 1.3rem;
-    max-width: 600px;
-    display: inline-block;
-  }
 }
 
 .nav {
@@ -728,9 +708,12 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-weight: var(--font-semi);
-    padding: 0 2rem;
+    font-weight: 600;
+    padding: 0 1.5rem 0 1.5rem;
     width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding-right: 0;
 }
 
 .nav__logo {
@@ -750,6 +733,8 @@ img {
     flex: 1;
     visibility: visible;
     opacity: 1;
+    margin-right: 1.5rem;
+    padding-right: 0;
 }
 
 .nav__list {
@@ -792,11 +777,14 @@ img {
 @media screen and (max-width: 767px) {
     .nav {
         padding: 0 1rem;
+        padding-right: 0;
     }
     .nav__menu {
         display: flex;
         justify-content: flex-end;
         flex: 1;
+        margin-right: 1.5rem;
+        padding-right: 0;
     }
     .nav__list {
         display: flex;
@@ -824,11 +812,14 @@ img {
     .nav {
         height: calc(var(--header-height) + 1rem);
         padding: 0 2rem;
+        padding-right: 0;
     }
     .nav__menu {
         display: flex;
         justify-content: flex-end;
         flex: 1;
+        margin-right: 1.5rem;
+        padding-right: 0;
     }
     .nav__list {
         display: flex;
@@ -849,16 +840,50 @@ img {
         transition: color 0.3s ease;
         position: relative;
     }
+}
 
+/* Web browser only (992px+) - Adjust nav positioning - MUST BE AFTER 768px */
+@media screen and (min-width: 992px) {
+  .nav__motto {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.3rem;
+    max-width: 600px;
+    display: inline-block;
+    margin-left: 13.5rem;  /* nav__motto stays exactly the same */
+  }
+  
+  .nav__logo {
+    flex-shrink: 0;
+    width: auto;
+  }
+  
+  /* ===== CHANGED: moved nav items more to the right ===== */
+  .nav__menu {
+    flex: 0 !important;
+    margin-left: auto !important;
+    margin-right: 15.7rem !important;
+    padding-right: 0rem !important; /* reduced from 8rem → brings items rightward */
+  }
+  
+  .nav__list {
+    gap: 2rem;
+  }
 }
 
 /* Extra small mobile screens */
 @media screen and (max-width: 480px) {
     .nav {
         padding: 0 0.5rem;
+        padding-right: 0;
     }
     .nav__list {
         gap: 1rem;
+    }
+    .nav__menu {
+        margin-right: 1rem;
+        padding-right: 0.5rem;
     }
     .nav__link {
         font-size: 0.85rem;
@@ -883,16 +908,21 @@ img {
 @media screen and (max-width: 360px) {
     .nav {
         padding: 0 0.3rem;
+        padding-right: 0;
     }
     .nav__list {
         gap: 0.8rem;
+    }
+    .nav__menu {
+        margin-right: 0.8rem;
+        padding-right: 0.3rem;
     }
     .nav__link {
         font-size: 0.8rem;
         color: #ffffff;
         font-weight: 600;
     }
-    .nav__logo span {
+    .nav__logo span7 {
         font-size: 0.65rem;
         color: #ffffff;
         font-weight: 600;
@@ -902,11 +932,11 @@ img {
 /* For larger screens */
 @media screen and (min-width: 1200px) {
     .nav__menu {
-        margin-right: 3rem;
+        margin-right: 1.5rem;
     }
     
     .nav__list {
-        padding-right: 2rem;
+        padding-right: 0;
     }
 }
 
@@ -940,7 +970,7 @@ img {
 .home__social-icon {
     width: max-content;
     margin-bottom: var(--mb-1);
-    font-size: 2rem; /* Increased from 1.4rem to 2rem */
+    font-size: 2rem;
     color: var(--second-color);
 }
 
@@ -1153,7 +1183,7 @@ img {
     .about__details {
         display: flex;
         flex-direction: column;
-        gap: 0.3rem; /* Reduced gap between items */
+        gap: 0.3rem;
         width: 100%;
         align-items: flex-start;
     }
@@ -1165,7 +1195,7 @@ img {
         white-space: normal;
         justify-content: center;
         width: 100%;
-        margin-bottom: -0.3rem; /* Reduce space between items */
+        margin-bottom: -0.3rem;
     }
     .about__bullet {
         display: inline-block;
@@ -1512,6 +1542,45 @@ img.skill-logo {
     }
 }
 
+/* Mobile devices (390px to 600px) - Reduce sizes but keep structure */
+@media (max-width: 600px) and (min-width: 390px) {
+    .skills-category {
+        gap: 6px;
+        margin-bottom: 15px;
+    }
+
+    .skill-tag {
+        padding: 6px 12px;
+        font-size: 0.7em;
+        border-radius: 3px;
+    }
+
+    .skill-logo {
+        font-size: 1.15em;
+    }
+
+    img.skill-logo {
+        width: 1.15em;
+        height: 1.15em;
+    }
+
+    .skills-section {
+        max-width: 380px;
+        padding: 20px 15px;
+        margin: 2rem auto;
+    }
+
+    .skills-title {
+        font-size: 1.3rem;
+        margin-bottom: 25px;
+    }
+
+    .skills-title::after {
+        width: 60px;
+        height: 2px;
+    }
+}
+
 /*===== MEDIA QUERIES =====*/
 
 /* Small devices (up to 320px) */
@@ -1595,11 +1664,163 @@ img.skill-logo {
 /* Larger Desktops (min-width: 992px) */
 @media screen and (min-width: 992px) {
     .home {
-        padding: 2.5rem 0 1.5rem;
+        padding: 1.3rem 0 2rem;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        max-width: 900px !important;
+        width: 100%;
+    }
+    
+    .home.bd-grid {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        max-width: 902px !important;
+        padding: 3rem 1.5rem 0 1.5rem;
+    }
+    
+    .button {
+        padding: .5rem 1.8rem;
     }
     
     .about__img {
         margin-top: 6.5rem;
+    }
+    
+    /* About section - zoom out to match cp-profiles */
+    .about.section {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding: 3rem 0 4.5rem 0 !important;
+    }
+    
+    .about .section-title {
+        font-size: 1.3rem !important;
+        margin-bottom: 2.5rem !important;
+    }
+    
+    .skills-title {
+        font-size: 1.3rem !important;
+        margin-bottom: 3.5rem !important;
+    }
+    
+    .work .section-title {
+        font-size: 1.3rem !important;
+        margin-bottom: 2.5rem !important;
+    }
+    
+    .about__main {
+        gap: 4rem !important;
+        max-width: 900px !important;
+    }
+    
+    .about__img {
+        max-width: 220px !important;
+        margin-top: 5.7rem !important;
+        margin-left: 7.5rem !important;
+    }
+    
+    .about__img img {
+        max-width: 220px !important;
+    }
+    
+    .about__text-content {
+        flex: 0 0 340px !important;
+        max-width: 340px !important;
+        margin-left: 0 !important;
+        margin-right: 2rem !important;
+    }
+    
+    .about__name {
+        font-size: 1.2rem !important;
+        margin-bottom: 1.2rem !important;
+    }
+    
+    .about__details {
+        gap: 0.35rem !important;
+        margin-left: 1.2rem !important;
+    }
+    
+    .about__item {
+        gap: 0.5rem !important;
+    }
+    
+    .about__bullet {
+        font-size: 0.95rem !important;
+    }
+    
+    .about__info {
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    /* CP Profiles section - match home section margins and zoom out */
+    .cp-profiles.section {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding: 3rem 0 5rem 0 !important;
+    }
+    
+    .cp-profiles .section-title {
+        font-size: 1.3rem !important;
+        margin-bottom: 3.5rem !important;
+    }
+    
+    .cp-container {
+        max-width: 900px !important;
+        padding: 0 1.5rem !important;
+        gap: 0.8rem !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    .cp-card {
+        padding: 0.85rem 0.75rem !important;
+    }
+    
+    .cp-card__body {
+        font-size: 0.9rem !important;
+    }
+    
+    .cp-card__header {
+        gap: 0.45rem !important;
+        margin-bottom: 0.08rem !important;
+    }
+    
+    .cp-card__logo {
+        width: 38px !important;
+        height: 38px !important;
+    }
+    
+    .cp-card__title {
+        font-size: 0.93rem !important;
+        font-weight: 600 !important;
+    }
+    
+    .cp-card__link {
+        font-size: 0.93rem !important;
+    }
+    
+    .cp-card__username {
+        font-size: 0.81rem !important;
+        margin-bottom: 0.55rem !important;
+    }
+    
+    .cp-stat__label {
+        font-size: 0.81rem !important;
+    }
+    
+    .cp-stat__value {
+        font-size: 0.81rem !important;
+        font-weight: 550 !important;
+    }
+    
+    .cp-card__stats {
+        gap: 0.42rem !important;
+    }
+    
+    .stars i {
+        font-size: 0.7rem !important;
     }
 }
 
@@ -2609,5 +2830,85 @@ img.skill-logo {
 
     .footer__copyright {
         font-size: 0.8rem;
+    }
+}
+
+/* ===== DESKTOP: Project section matches other section margins ===== */
+@media screen and (min-width: 992px) {
+    .work.section {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .work__grid {
+        max-width: 900px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding: 1rem 1.5rem !important;
+        gap: 1.2rem !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    /* Shrink card image */
+    .work .project-card__img {
+        height: 120px !important;
+    }
+
+    .work .project-card__img img {
+        object-fit: cover !important;
+    }
+
+    /* Shrink card body text */
+    .work .project-card__body {
+        padding: 0.7rem 0.75rem 0.85rem !important;
+    }
+
+    .work .project-card__title {
+        font-size: 0.88rem !important;
+        margin-bottom: 0.3rem !important;
+        line-height: 1.25 !important;
+    }
+
+    .work .project-card__desc {
+        font-size: 0.72rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: 0.4rem !important;
+        -webkit-line-clamp: 2 !important;
+        line-clamp: 2 !important;
+    }
+
+    /* Shrink skill tags inside cards */
+    .work .project-card__tags {
+        gap: 4px !important;
+        margin-bottom: 0.4rem !important;
+    }
+
+    .work .project-card__tags .skill-tag {
+        font-size: 0.58rem !important;
+        padding: 2px 6px !important;
+        gap: 4px !important;
+    }
+
+    .work .project-card__tags .skill-logo,
+    .work .project-card__tags img.skill-logo {
+        font-size: 1.1em !important;
+        width: 1.1em !important;
+        height: 1.1em !important;
+    }
+
+    /* Shrink links */
+    .work .project-card__links {
+        gap: 0.6rem !important;
+        margin-top: 0 !important;
+    }
+
+    .work .btn-icon {
+        font-size: 0.65rem !important;
+    }
+
+    /* Work section title */
+    .work .section-title {
+        font-size: 1.3rem !important;
+        margin-bottom: 0.5rem !important;
     }
 }

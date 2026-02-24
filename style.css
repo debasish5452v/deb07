@@ -2959,10 +2959,12 @@ img.skill-logo {
         white-space: nowrap !important;
     }
     
-    .project-card__tags .skill-logo,
+    .project-card__tags .skill-logo {
+        font-size: 1.4em !important;
+    }
+
     .project-card__tags img.skill-logo {
-        font-size: 1em !important;
-        width: 1em !important;
-        height: 1em !important;
+        width: 1.4em !important;
+        height: 1.4em !important;
     }
 }
